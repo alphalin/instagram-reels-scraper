@@ -42,6 +42,9 @@
 
 ```bash
 yt-dlp -a reels_list.txt --postprocessor-args "ffmpeg:-c:v libx264 -c:a copy" -o "%(title).50s [%(id)s].%(ext)s" --force-overwrites
+
+#若Mac 的 QuickTime 或 iOS 原生播放器解碼時出現金屬爆音、聲音斷續或速度變快的破音感，改成使用以下參數，重新壓縮為高音質 AAC 格式：
+yt-dlp -a reels_list.txt --postprocessor-args "ffmpeg:-c:v libx264 -c:a aac -b:a 192k" -o "%(title).50s [%(id)s].%(ext)s" --force-overwrites
 ```
 ---
 
